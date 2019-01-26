@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Reactions
 {
     public enum Verb { Light, Photograph, Record, Pay };
-
+    public enum Action { Light, Cat, Beach, Photograph, Grocer, Pay, BluesBand, Record };
     public enum Item {
         // Wanted items
         Beach,
@@ -22,8 +22,6 @@ public class Reactions
         NavyPier,
         FerrisWheel
     };
-
-    public enum Action { Light, Cat, Beach, Photograph, Grocer, Pay, BluesBand, Record };
 
 
     public string GetQuip(Action action, Verb verb, Item item)
