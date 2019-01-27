@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ThoughtBubble
+  - ThoughtBubbleGroup
+  - ThoughtDots
+  - Text
+<<<<<<< HEAD
+  - PhoneView
+  - Credits
+=======
+  - Paralax
+  - LeftBounds
+  - RightBounds
+>>>>>>> 61c7d3c20fcf377a0ffa588f7331df2888bd58b5
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Obstacles
+  - Camera
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
