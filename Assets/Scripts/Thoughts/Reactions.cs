@@ -30,6 +30,9 @@ public class Reactions
         FerrisWheel
     };
 
+    private Dictionary<Verb, string> CatQuips;
+
+
     public string GeneralFailure()
     {
         return "Sigh... I don't know why I thought that would help me feel less homesick.";
@@ -37,22 +40,15 @@ public class Reactions
 
     public string GetQuip(Verb verb, Item item)
     {
+        CatQuips.Add(Light, "You look just like my old cat, Mr Whiskers!");
+        CatQuips.Add(Photograph, "I guess I'm a guy who takes cat photos now. Huh.");
+        CatQuips.Add(Record, "C'mon kitty... Meow or purr or something... Dang.");
+        CatQuips.Add(Pay, "You're trying to buy something from a cat, Nacho. Wow. I better go home and rest.");
+
         switch (item)
         {
             case Item.Cat:
-                switch (verb)
-                {
-                    case Verb.Light:
-                        return "You look just like my old cat, Mr. Whiskers!";
-                    case Verb.Photograph:
-                        return "I guess I'm a guy who takes cat photos now. Huh.";
-                    case Verb.Record:
-                        return "C'mon kitty... Meow or purr or something... Dang.";
-                    case Verb.Pay:
-                        return "I don't think this cat takes cards. What a weird thing to do --- I better go home and rest.";
-                    default:
-                        return GeneralFailure();
-                }
+                return CatQuips[verb];
 
             case Item.Beach:
                 switch (verb)
