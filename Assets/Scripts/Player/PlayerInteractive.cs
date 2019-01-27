@@ -46,13 +46,13 @@ public class PlayerInteractive : MonoBehaviour
             {
                 switch (clickedApp)
                 {
-                    case "CameraClickArea":
+                    case "Camera":
                         return m_reactions.GetQuip(Reactions.Verb.Photograph, (Reactions.Item)AppToItem(thing.name));
-                    case "RecorderClickArea":
+                    case "Recorder":
                         return m_reactions.GetQuip(Reactions.Verb.Record, (Reactions.Item)AppToItem(thing.name));
-                    case "LightClickedArea":
+                    case "Light":
                         return m_reactions.GetQuip(Reactions.Verb.Photograph, (Reactions.Item)AppToItem(thing.name));
-                    case "PayClickedArea":
+                    case "Pay":
                         return m_reactions.GetQuip(Reactions.Verb.Photograph, (Reactions.Item)AppToItem(thing.name));
                 }
             }

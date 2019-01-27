@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoneApps : MonoBehaviour {
+public class PhoneApps : MonoBehaviour
+{
+    private GameObject m_player;
 
     string whatApp;
     public GameObject phoneView;
@@ -12,11 +14,13 @@ public class PhoneApps : MonoBehaviour {
     public AudioClip tapSounds;
     private IEnumerator pauseForSound;
 
-    void Start () {
-		
+    void Start ()
+    {
+        m_player = GameObject.Find("MainPlayer");
 	}
 	
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
@@ -27,20 +31,16 @@ public class PhoneApps : MonoBehaviour {
         switch (whatApp)
         {
             case "CameraClickArea":
-                Debug.Log("Clicked Camera");
-                //Check for Camera Trigger
+                m_player.OnPhoneClick("Camera");
                 break;
             case "RecorderClickArea":
-                Debug.Log("Clicked Recorder");
-                //Check for Music Trigger
+                m_player.OnPhoneClick("Recorder");
                 break;
             case "LightClickArea":
-                Debug.Log("Clicked Light");
-                //Check for Animal Trigger
+                m_player.OnPhoneClick("Light");
                 break;
             case "PayClickArea":
-                Debug.Log("Clicked Pay");
-                //Check for Food Trigger
+                m_player.OnPhoneClick("Pay");
                 break;
             case "CommunicationClickArea":
                 Debug.Log("Clicked Comm");
