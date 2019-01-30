@@ -16,36 +16,39 @@ public class PlayerBehavior : MonoBehaviour
         UsingMailbox
     }
 
-
     private GameObject m_player;
 
-    private List<Sprite> m_walkingLeftStrip;
-    private List<Sprite> m_walkingRightStrip;
+    //private List<Sprite> m_walkingLeftStrip;
+    //private List<Sprite> m_walkingRightStrip;
+
+    public Sprite[] m_walkingLeftStrip;
+    public Sprite[] m_walkingRightStrip;
+
     private Sprite m_usingCellphone;
     private Sprite m_usingMailbox;
 
     private int m_currentFrame;
     private float m_currentFrameDelta;
-      
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         m_player = GameObject.Find("PlayerSprite");
 
-        m_walkingLeftStrip = new List<Sprite>();
-        m_walkingRightStrip = new List<Sprite>();
+        //m_walkingLeftStrip = new List<Sprite>();
+        //m_walkingRightStrip = new List<Sprite>();
 
-        m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_4"));
-        m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_3"));
-        m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_2"));
-        m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_1"));
-        m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_0"));
+        //m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_4"));
+        //m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_3"));
+        //m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_2"));
+        //m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_1"));
+        //m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_0"));
 
-        m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_0"));
-        m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_1"));
-        m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_2"));
-        m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_3"));
-        m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_4"));
+        //m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_0"));
+        //m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_1"));
+        //m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_2"));
+        //m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_3"));
+        //m_walkingRightStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Right_4"));
 
         m_usingCellphone = Resources.Load<Sprite>("Sprites/Nacho/NachoHoldingPhone");
         m_usingMailbox = Resources.Load<Sprite>("Sprites/Nacho/Nacho_Mailbox");
@@ -54,9 +57,9 @@ public class PlayerBehavior : MonoBehaviour
         CurrentState = PlayerState.Idle;
         m_currentFrameDelta = 0.0F;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (CurrentState == PlayerState.Idle)
         {
@@ -84,7 +87,7 @@ public class PlayerBehavior : MonoBehaviour
             {
                 m_currentFrameDelta = 0.0F;
                 m_currentFrame++;
-                if (m_currentFrame > m_walkingLeftStrip.Count)
+                if (m_currentFrame > m_walkingLeftStrip.Length)
                 {
                     m_currentFrame = 0;
                 }
@@ -100,12 +103,12 @@ public class PlayerBehavior : MonoBehaviour
             {
                 m_currentFrameDelta = 0.0F;
                 m_currentFrame++;
-                if (m_currentFrame > m_walkingRightStrip.Count)
+                if (m_currentFrame > m_walkingRightStrip.Length)
                 {
                     m_currentFrame = 0;
                 }
             }
             CurrentSprite = m_walkingRightStrip[m_currentFrame];
         }
-	}
+    }
 }

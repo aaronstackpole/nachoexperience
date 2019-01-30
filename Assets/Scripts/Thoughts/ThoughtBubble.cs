@@ -30,6 +30,8 @@ public class ThoughtBubble : MonoBehaviour
     #endregion Rectangle Tranforms
     #endregion Varables
 
+
+
     // Use this for initialization
     void Start()
     {
@@ -44,10 +46,10 @@ public class ThoughtBubble : MonoBehaviour
         ResizeThoughtBubble();
         //PositionThoguhtDots();
 
-        //if (strIndex >= mainText.Length)
-        //{
-        //    ClearText();
-        //}
+        if (strIndex >= mainText.Length)
+        {
+            ClearText();
+        }
     }
 
     private void FindComponents()

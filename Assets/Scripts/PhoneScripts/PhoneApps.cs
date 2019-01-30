@@ -31,16 +31,16 @@ public class PhoneApps : MonoBehaviour
         switch (whatApp)
         {
             case "CameraClickArea":
-                m_player.OnPhoneClick("Camera");
+                //m_player.OnPhoneClick("Camera");
                 break;
             case "RecorderClickArea":
-                m_player.OnPhoneClick("Recorder");
+                //m_player.OnPhoneClick("Recorder");
                 break;
             case "LightClickArea":
-                m_player.OnPhoneClick("Light");
+                //m_player.OnPhoneClick("Light");
                 break;
             case "PayClickArea":
-                m_player.OnPhoneClick("Pay");
+                //m_player.OnPhoneClick("Pay");
                 break;
             case "CommunicationClickArea":
                 Debug.Log("Clicked Comm");

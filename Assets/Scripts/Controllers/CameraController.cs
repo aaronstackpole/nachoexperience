@@ -62,8 +62,8 @@ public class CameraController : MonoBehaviour
 
         controller = gameObject.GetComponent<Controller2D>();
 
-        leftBounds = GameObject.FindGameObjectWithTag("LeftBounds").GetComponent<Transform>();
-        rightBounds = GameObject.FindGameObjectWithTag("RightBounds").GetComponent<Transform>();
+        //leftBounds = GameObject.FindGameObjectWithTag("LeftBounds").GetComponent<Transform>();
+        //rightBounds = GameObject.FindGameObjectWithTag("RightBounds").GetComponent<Transform>();
 
         print(cityBG);
     }
@@ -78,8 +78,8 @@ public class CameraController : MonoBehaviour
         //print(playerCollider);
         //print(leftBounds);
 
-        if (playerCollider.transform.position.x > leftBounds.position.x && playerCollider.transform.position.x < rightBounds.position.x)
-            MoveCam();
+        //if (playerCollider.transform.position.x > leftBounds.position.x && playerCollider.transform.position.x < rightBounds.position.x)
+        MoveCam();
         //else print("touching border");
 
         Paralax();
@@ -147,6 +147,6 @@ public class CameraController : MonoBehaviour
 
     private void Paralax()
     {
-        cityBG.position = new Vector3(cam.transform.position.x * cityParalax, cityBG.position.y, 0.1f);
+        cityBG.position = new Vector3(cam.transform.position.x * cityParalax, cityBG.position.y, 20f);
     }
 }
